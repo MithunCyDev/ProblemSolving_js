@@ -166,3 +166,27 @@ const result = kangarooJump(x1, v1, x2, v2);
 console.log(result); // Output will be "YES" in this case
 
 
+//Apple Orange Problem Hacker Rank
+function countApplesAndOranges(s, t, a, b, apples, oranges) {
+  let appleCount = 0;
+  let orangeCount = 0;
+
+  for (let appleDistance of apples) {
+    const applePosition = a + appleDistance;
+    if (applePosition >= s && applePosition <= t) {
+      appleCount++;
+    }
+  }
+
+  for (let orangeDistance of oranges) {
+    const orangePosition = b + orangeDistance;
+    if (orangePosition >= s && orangePosition <= t) {
+      orangeCount++;
+    }
+  }
+
+  console.log(appleCount);
+  console.log(orangeCount);
+}
+
+
