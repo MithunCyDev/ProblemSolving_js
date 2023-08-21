@@ -136,3 +136,33 @@ function timeConversion(s) {
 console.log(timeConversion('11:00:00PM'));
 
 
+//Kangaroo Jump Problem
+function kangarooJump(x1, v1, x2, v2) {
+    // Check if kangaroos have the same initial position and velocity
+    if (x1 === x2 && v1 === v2) {
+        return "YES";
+    }
+
+    // Check if the kangaroos have the same velocity and different initial positions
+    if (v1 === v2) {
+        return "NO";
+    }
+
+    // Check if the relative distance between kangaroos is divisible by the relative velocity
+    if ((x2 - x1) % (v1 - v2) === 0 && (x2 - x1) / (v1 - v2) >= 0) {
+        return "YES";
+    }
+
+    return "NO";
+}
+
+// Example usage
+const x1 = 0;
+const v1 = 3;
+const x2 = 4;
+const v2 = 2;
+
+const result = kangarooJump(x1, v1, x2, v2);
+console.log(result); // Output will be "YES" in this case
+
+
