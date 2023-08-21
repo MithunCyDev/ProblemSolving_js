@@ -190,3 +190,26 @@ function countApplesAndOranges(s, t, a, b, apples, oranges) {
 }
 
 
+//Auto Grading System
+function gradingStudents(grades) {
+  const roundedGrades = [];
+  for (const grade of grades) {
+    if (grade < 38) {
+      roundedGrades.push(grade);
+    } else {
+      const nextMultipleOf5 = Math.ceil(grade / 5) * 5;
+      if (nextMultipleOf5 - grade < 3) {
+        roundedGrades.push(nextMultipleOf5);
+      } else {
+        roundedGrades.push(grade);
+      }
+    }
+  }
+  return roundedGrades;
+}
+
+// Test the function with the sample input
+const grades = [73, 67, 38, 33];
+const roundedGrades = gradingStudents(grades);
+console.log(roundedGrades.join('\n'));
+
