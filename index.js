@@ -213,3 +213,22 @@ const grades = [73, 67, 38, 33];
 const roundedGrades = gradingStudents(grades);
 console.log(roundedGrades.join('\n'));
 
+
+//Total Number factor
+function getTotalx(a, b){
+     const sumA = Math.max(...a)
+     const sumB = Math.min(...b)
+
+     let count = 0;
+
+     for(let num = sumA; num <= sumB; num++){
+          const isFactorB = b.every(element => element % num === 0)
+          const isFactorA = a.every(element => num % element === 0)
+
+          if(isFactorA && isFactorB){
+               count++
+          }
+     }
+
+     return count;
+}
