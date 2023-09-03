@@ -232,3 +232,40 @@ function getTotalx(a, b){
 
      return count;
 }
+
+//Migratory Bird Problem
+function migratoryBirds(arr) {
+  // Create an object to store the count of each bird type
+  const birdCount = {};
+
+  // Iterate through the array and count bird sightings
+  for (let bird of arr) {
+    if (birdCount[bird]) {
+      birdCount[bird]++;
+    } else {
+      birdCount[bird] = 1;
+    }
+  }
+
+  // Find the bird type with the highest count
+  let maxCount = 0;
+  let mostFrequentType = 0;
+
+  for (let bird in birdCount) {
+    if (birdCount[bird] > maxCount) {
+      maxCount = birdCount[bird];
+      mostFrequentType = bird;
+    } else if (birdCount[bird] === maxCount && bird < mostFrequentType) {
+      // If there are multiple types with the same max count, choose the smallest id
+      mostFrequentType = bird;
+    }
+  }
+
+  return mostFrequentType;
+}
+
+// Sample input
+const birdSightings = [1, 4, 4, 4, 5, 3];
+
+const result = migratoryBirds(birdSightings);
+console.log(result); // Output: 4
