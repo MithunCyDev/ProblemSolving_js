@@ -268,4 +268,28 @@ function migratoryBirds(arr) {
 const birdSightings = [1, 4, 4, 4, 5, 3];
 
 const result = migratoryBirds(birdSightings);
-console.log(result); // Output: 4
+console.log(result);
+
+
+//Day of Programmer
+function dayOfProgrammer(year) {
+    let day = 0;
+    let month = 0;
+
+    if (year === 1918) {
+        // Special case for the transition year 1918
+        day = 26;
+        month = 2;
+    } else if ((year < 1918 && year % 4 === 0) || 
+               (year > 1918 && ((year % 400 === 0) || (year % 4 === 0 && year % 100 !== 0)))) {
+        // Leap year
+        day = 12;
+        month = 9;
+    } else {
+        // Non-leap year
+        day = 13;
+        month = 9;
+    }
+
+    return `${day.toString().padStart(2, '0')}.${month.toString().padStart(2, '0')}.${year}`;
+
