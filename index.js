@@ -293,3 +293,20 @@ function dayOfProgrammer(year) {
 
     return `${day.toString().padStart(2, '0')}.${month.toString().padStart(2, '0')}.${year}`;
 
+
+  //Bon Appetit
+  function bonAppetit(bill, k, b) {
+    
+    const totalCost = bill.reduce((acc, item)=> acc + item, 0)
+    
+    const annaShare = (totalCost - bill[k])/2;
+    
+    if(annaShare == b){
+        console.log("Bon Appetit")
+    }else{
+        
+        const refundAmount = b- annaShare;
+        console.log(refundAmount)
+    }
+
+}
