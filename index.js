@@ -310,3 +310,34 @@ function dayOfProgrammer(year) {
     }
 
 }
+
+
+
+function sockMerchant(n, ar) {
+  const colorCount = {};
+
+  for (const color of ar) {
+    if (color in colorCount) {
+      console.log('Color Count',colorCount)
+      colorCount[color]++;
+    } else {
+      colorCount[color] = 1;
+    }
+  }
+
+  let totalPairs = 0;
+
+  for (const count of Object.values(colorCount)) {
+    totalPairs += Math.floor(count / 2);
+  }
+
+  return totalPairs;
+}
+
+// Sample Input
+const n = 9;
+const ar = [10, 20, 20, 10, 10, 30, 50, 10, 20];
+
+// Call the function and print the result
+const result = sockMerchant(n, ar);
+console.log(result);
