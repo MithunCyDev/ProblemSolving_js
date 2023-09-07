@@ -341,3 +341,22 @@ const ar = [10, 20, 20, 10, 10, 30, 50, 10, 20];
 // Call the function and print the result
 const result = sockMerchant(n, ar);
 console.log(result);
+
+
+function pageCount(n, p) {
+    // Calculate the minimum number of pages to turn from the front
+    const fromFront = Math.floor(p / 2);
+
+    // Calculate the minimum number of pages to turn from the back
+    const fromBack = Math.floor(n / 2) - fromFront;
+
+    // Return the minimum of pages turned from front and back
+    return Math.min(fromFront, fromBack);
+}
+
+// Example usage:
+const n = 6; // Number of pages in the book
+const p = 2; // Page number to turn to
+const minPagesTurned = pageCount(n, p);
+console.log(minPagesTurned); // Output: 1
+
