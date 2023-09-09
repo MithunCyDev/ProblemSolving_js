@@ -360,3 +360,32 @@ const p = 2; // Page number to turn to
 const minPagesTurned = pageCount(n, p);
 console.log(minPagesTurned); // Output: 1
 
+//countingValleys
+function countingValleys(steps, path) {
+    let altitude = 0; // Initialize the altitude at sea level
+    let valleys = 0; // Initialize the number of valleys
+
+    for (let i = 0; i < steps; i++) {
+        if (path[i] === 'U') {
+            altitude++;
+        } else {
+            altitude--;
+        }
+
+        // Check if we have completed a valley
+        if (altitude === 0 && path[i] === 'U') {
+            valleys++;
+        }
+    }
+
+    return valleys;
+}
+
+// Example usage
+const steps = 8;
+const path = 'UDDDUDUU';
+const result = countingValleys(steps, path);
+
+console.log(result); // Output: 1
+
+
