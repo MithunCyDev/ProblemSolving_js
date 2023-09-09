@@ -415,4 +415,28 @@ const result = getMoneySpent(keyboards, drives, budget);
 
 console.log(result); // Output: 9
 
+//catAndMouse
+  function catAndMouse(x, y, z) {
+    const distanceToCatA = Math.abs(x - z);
+    const distanceToCatB = Math.abs(y - z);
+
+    if (distanceToCatA < distanceToCatB) {
+        return 'Cat A';
+    } else if (distanceToCatA > distanceToCatB) {
+        return 'Cat B';
+    } else {
+        return 'Mouse C';
+    }
+}
+
+// Example usage
+const queries = [
+    [1, 2, 3],
+    [1, 3, 2]
+];
+
+for (const query of queries) {
+    const result = catAndMouse(...query);
+    console.log(result);
+}
 
