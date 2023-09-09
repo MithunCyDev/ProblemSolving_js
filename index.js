@@ -389,3 +389,30 @@ const result = countingValleys(steps, path);
 console.log(result); // Output: 1
 
 
+function getMoneySpent(keyboards, drives, budget) {
+    let maxSpent = -1;
+
+    // Iterate through each combination of keyboard and USB drive
+    for (let i = 0; i < keyboards.length; i++) {
+        for (let j = 0; j < drives.length; j++) {
+            let totalCost = keyboards[i] + drives[j];
+            
+            // Check if the total cost is within budget and greater than the current maximum
+            if (totalCost <= budget && totalCost > maxSpent) {
+                maxSpent = totalCost;
+            }
+        }
+    }
+
+    return maxSpent;
+}
+
+// Example usage
+const budget = 10;
+const keyboards = [3, 1];
+const drives = [5, 2, 8];
+const result = getMoneySpent(keyboards, drives, budget);
+
+console.log(result); // Output: 9
+
+
