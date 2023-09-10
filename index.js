@@ -440,3 +440,29 @@ for (const query of queries) {
     console.log(result);
 }
 
+//pickingNumbers
+function pickingNumbers(a) {
+    const frequency = new Array(101).fill(0);
+
+    a.forEach(num => {
+        frequency[num]++;
+    });
+
+    let maxLength = 0;
+
+    for (let i = 1; i < frequency.length; i++) {
+        maxLength = Math.max(maxLength, frequency[i] + frequency[i - 1]);
+    }
+
+    return maxLength;
+}
+
+// Example usage:
+const array0 = [4, 6, 5, 3, 3, 1];
+const result0 = pickingNumbers(array0);
+console.log(result0);  // Output: 3
+
+const array1 = [1, 2, 2, 3, 1, 2];
+const result1 = pickingNumbers(array1);
+console.log(result1);  // Output: 5
+
