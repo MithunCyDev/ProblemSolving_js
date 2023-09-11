@@ -466,3 +466,28 @@ const array1 = [1, 2, 2, 3, 1, 2];
 const result1 = pickingNumbers(array1);
 console.log(result1);  // Output: 5
 
+//climbingLeaderboard
+function climbingLeaderboard(ranked, player) {
+  let uniqueRanked = [...new Set(ranked)]; // Remove duplicate scores and keep the order
+
+  console.log('rank', uniqueRanked)
+  let playerRanks = [];
+
+  let j = uniqueRanked.length - 1; // Index for the leaderboard
+
+  for (let i = 0; i < player.length; i++) {
+      while (j >= 0 && player[i] >= uniqueRanked[j]) {
+          j--;
+      }
+      playerRanks.push(j + 2); // Add 2 because ranks are 1-based
+  }
+
+  return playerRanks;
+}
+
+// Sample input
+const ranked = [100, 100, 50, 40, 40, 20, 10];
+const player = [5, 25, 50, 120, 30];
+
+const result = climbingLeaderboard(ranked, player);
+console.log(result);
