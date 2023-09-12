@@ -489,5 +489,19 @@ function climbingLeaderboard(ranked, player) {
 const ranked = [100, 100, 50, 40, 40, 20, 10];
 const player = [5, 25, 50, 120, 30];
 
+//HurdleRace
+function hurdleRace(k, height) {
+    const maxHurdle = Math.max(...height);
+    const dosesNeeded = Math.max(0, maxHurdle - k);
+    return dosesNeeded;
+}
+
+// Example Usage
+const k = 4;
+const height = [1, 6, 3, 5, 2];
+const doses = hurdleRace(k, height);
+console.log(doses); // Output: 2
+
+
 const result = climbingLeaderboard(ranked, player);
 console.log(result);
