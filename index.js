@@ -502,6 +502,24 @@ const height = [1, 6, 3, 5, 2];
 const doses = hurdleRace(k, height);
 console.log(doses); // Output: 2
 
+//designerPdfViewer
+function designerPdfViewer(h, word) {
+    let maxHeight = 0;
+    for (let i = 0; i < word.length; i++) {
+        const charIndex = word.charCodeAt(i) - 97; // ASCII value of 'a' is 97
+        maxHeight = Math.max(maxHeight, h[charIndex]);
+    }
+    const highlightArea = maxHeight * word.length;
+    return highlightArea;
+}
+
+// Example Usage
+const heights = [1, 3, 1, 3, 1, 4, 1, 3, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5];
+const word = "abc";
+const area = designerPdfViewer(heights, word);
+console.log(area); // Output: 9
+
+
 
 const result = climbingLeaderboard(ranked, player);
 console.log(result);
