@@ -541,3 +541,20 @@ function utopianTree(n) {
 console.log(utopianTree(0)); // Output: 1
 console.log(utopianTree(1)); // Output: 2
 console.log(utopianTree(4)); // Output: 7
+
+//angryProfessor
+function angryProfessor(k, a) {
+    let onTimeStudents = 0;
+    for (let i = 0; i < a.length; i++) {
+        if (a[i] <= 0) {
+            onTimeStudents++;
+        }
+    }
+    
+    return onTimeStudents >= k ? "NO" : "YES";
+}
+
+// Example usage:
+console.log(angryProfessor(3, [-1, -3, 4, 2])); // Output: "YES"
+console.log(angryProfessor(2, [0, -1, 2, 1])); // Output: "NO"
+
