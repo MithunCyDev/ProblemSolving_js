@@ -590,4 +590,14 @@ const arr = [
 const maxHourglassSum = hourglassSum(arr);
 console.log(maxHourglassSum); // Output: 19
 
+// NUmber to Binary, 8-bit
+function numberTobinary(num){
+    let binaryTree = num.toString(2);
+    let binaryDigit = "0".repeat(8 - binaryTree.length);
+    return binaryTree + binaryDigit
+}
+
+const number = 43;
+const result = numberTobinary(number)
+console.log(result)
 
