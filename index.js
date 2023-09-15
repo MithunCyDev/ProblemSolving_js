@@ -558,3 +558,36 @@ function angryProfessor(k, a) {
 console.log(angryProfessor(3, [-1, -3, 4, 2])); // Output: "YES"
 console.log(angryProfessor(2, [0, -1, 2, 1])); // Output: "NO"
 
+//hourglassSum
+function hourglassSum(arr) {
+    let maxSum = -Infinity;
+
+    for (let i = 0; i <= 3; i++) {
+        for (let j = 0; j <= 3; j++) {
+            let currentSum = 
+                arr[i][j] + arr[i][j+1] + arr[i][j+2] +
+                            arr[i+1][j+1] +
+                arr[i+2][j] + arr[i+2][j+1] + arr[i+2][j+2];
+
+            if (currentSum > maxSum) {
+                maxSum = currentSum;
+            }
+        }
+    }
+
+    return maxSum;
+}
+
+const arr = [
+    [1, 1, 1, 0, 0, 0],
+    [0, 1, 0, 0, 0, 0],
+    [1, 1, 1, 0, 0, 0],
+    [0, 0, 2, 4, 4, 0],
+    [0, 0, 0, 2, 0, 0],
+    [0, 0, 1, 2, 4, 0]
+];
+
+const maxHourglassSum = hourglassSum(arr);
+console.log(maxHourglassSum); // Output: 19
+
+
