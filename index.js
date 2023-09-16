@@ -601,3 +601,41 @@ const number = 43;
 const result = numberTobinary(number)
 console.log(result)
 
+//dynamicArray  DataStructure
+function dynamicArray(n, queries) {
+    // Initialize an array of empty arrays (n of them)
+    let arr = Array.from({ length: n }, () => []);
+    
+    // Initialize an empty array to store answers
+    let answers = [];
+    
+    // Initialize a variable to keep track of the last answer
+    let last_answer = 0;
+
+    // Loop through the queries
+    for (let i = 0; i < queries.length; i++) {
+        // Split the current query into an array of numbers
+        let [q, x, y] = queries[i].map(Number);
+
+        // Process query type 1
+        if (q === 1) {
+            // Calculate the index based on XOR operation and modulo n
+            let idx = (x ^ last_answer) % n;
+            // Append y to the array at index idx
+            arr[idx].push(y);
+        } 
+        // Process query type 2
+        else if (q === 2) {
+            // Calculate the index based on XOR operation and modulo n
+            let idx = (x ^ last_answer) % n;
+            // Update last_answer with the value from the array
+            last_answer = arr[idx][y % arr[idx].length];
+            // Store the new value of last_answer in the answers array
+            answers.push(last_answer);
+        }
+    }
+
+    // Return the array of answers
+    return answers;
+}
+
