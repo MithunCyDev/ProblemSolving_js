@@ -639,3 +639,23 @@ function dynamicArray(n, queries) {
     return answers;
 }
 
+//viralAdvertising
+function viralAdvertising(n) {
+    let shared = 5;
+    let liked = Math.floor(shared / 2);
+    let cumulativeLikes = liked;
+
+    for (let day = 2; day <= n; day++) {
+        shared = liked * 3; // Each person shares with 3 friends
+        liked = Math.floor(shared / 2);
+        cumulativeLikes += liked;
+    }
+
+    return cumulativeLikes;
+}
+
+// Example usage:
+const dayNumber = 3;
+const result = viralAdvertising(dayNumber);
+console.log(result); // Output: 9
+
