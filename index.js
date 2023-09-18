@@ -312,7 +312,7 @@ function dayOfProgrammer(year) {
 }
 
 
-
+//sockMerchant
 function sockMerchant(n, ar) {
   const colorCount = {};
 
@@ -342,7 +342,7 @@ const ar = [10, 20, 20, 10, 10, 30, 50, 10, 20];
 const result = sockMerchant(n, ar);
 console.log(result);
 
-
+//pageCount
 function pageCount(n, p) {
     // Calculate the minimum number of pages to turn from the front
     const fromFront = Math.floor(p / 2);
@@ -388,7 +388,7 @@ const result = countingValleys(steps, path);
 
 console.log(result); // Output: 1
 
-
+//getMoneySpent
 function getMoneySpent(keyboards, drives, budget) {
     let maxSpent = -1;
 
