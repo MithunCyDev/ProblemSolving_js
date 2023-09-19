@@ -25,3 +25,4 @@
 /hourglassSum,
 /dynamicArray(DataStructure),
 /viralAdvertising,
+/circularArrayRotation,
