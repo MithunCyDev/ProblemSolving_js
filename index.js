@@ -678,3 +678,25 @@ const queries = [0, 1, 2];
 const result = circularArrayRotation(a, k, queries);
 console.log(result); // Output: [2, 3, 1]
 
+//permutationEquation
+function permutationEquation(p) {
+    const result = [];
+
+    for (let x = 1; x <= p.length; x++) {
+        const index1 = p.indexOf(x) + 1; // Find index of x in p
+        const index2 = p.indexOf(index1) + 1; // Find index of index1 in p
+        result.push(index2);
+    }
+
+    return result;
+}
+
+// Example usage:
+const p1 = [2, 3, 1];
+const result1 = permutationEquation(p1);
+console.log(result1); // Output: [2, 3, 1]
+
+const p2 = [4, 3, 5, 1, 2];
+const result2 = permutationEquation(p2);
+console.log(result2); // Output: [1, 3, 5, 4, 2]
+
