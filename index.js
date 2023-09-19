@@ -659,3 +659,22 @@ const dayNumber = 3;
 const result = viralAdvertising(dayNumber);
 console.log(result); // Output: 9
 
+//circularArrayRotation
+function circularArrayRotation(a, k, queries) {
+    const result = [];
+
+    for (let i = 0; i < queries.length; i++) {
+        const newIndex = (queries[i] - (k % a.length) + a.length) % a.length;
+        result.push(a[newIndex]);
+    }
+
+    return result;
+}
+
+// Example usage:
+const a = [1, 2, 3];
+const k = 2;
+const queries = [0, 1, 2];
+const result = circularArrayRotation(a, k, queries);
+console.log(result); // Output: [2, 3, 1]
+
