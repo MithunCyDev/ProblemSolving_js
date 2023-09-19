@@ -26,3 +26,4 @@
 /dynamicArray(DataStructure),
 /viralAdvertising,
 /circularArrayRotation,
+/permutationEquation,
