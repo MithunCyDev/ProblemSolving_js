@@ -700,3 +700,25 @@ const p2 = [4, 3, 5, 1, 2];
 const result2 = permutationEquation(p2);
 console.log(result2); // Output: [1, 3, 5, 4, 2]
 
+
+//findDigits
+function findDigits(n) {
+    let count = 0;
+    let digits = n.toString().split('').map(Number);
+    digits.forEach(element => {
+        if(element !== 0 && n % element === 0 ){
+            count++
+        }
+    });
+ 
+    return count;
+}
+
+// Test cases
+const testCases = [12, 1012];
+
+for (let testCase of testCases) {
+    console.log(findDigits(testCase));
+    console.log(typeof testCase)
+}
+
