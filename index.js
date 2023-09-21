@@ -764,3 +764,28 @@ function appendAndDelete(s, t, k) {
 console.log(appendAndDelete("hackerhappy", "hackerrank", 9)); // Output: Yes
 console.log(appendAndDelete("aba", "aba", 7)); // Output: Yes
 
+//countSquareIntegers
+function countSquareIntegers(a, b) {
+    let count = 0;
+    let current = Math.ceil(Math.sqrt(a));
+
+    while (current * current <= b) {
+        count++;
+        current++;
+    }
+
+    return count;
+}
+
+// Example usage
+const testCases = [
+    { a: 3, b: 9 },
+    { a: 17, b: 24 }
+];
+
+for (const testCase of testCases) {
+    const result = countSquareIntegers(testCase.a, testCase.b);
+    console.log(result);
+}
+
+
