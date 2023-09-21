@@ -736,3 +736,31 @@ function extraLongFactorials(n) {
 // Example usage:
 extraLongFactorials(25);
 
+//appendAndDelete
+function appendAndDelete(s, t, k) {
+    let commonLength = 0;
+
+    // Find the length of the common prefix
+    for (let i = 0; i < Math.min(s.length, t.length); i++) {
+        if (s[i] === t[i]) {
+            commonLength++;
+        } else {
+            break;
+        }
+    }
+
+    // Calculate the total operations needed
+    let totalOperations = s.length + t.length - 2 * commonLength;
+
+    // Check if it's possible
+    if (totalOperations <= k && (totalOperations - k) % 2 === 0 || k >= s.length + t.length) {
+        return "Yes";
+    } else {
+        return "No";
+    }
+}
+
+// Example usage
+console.log(appendAndDelete("hackerhappy", "hackerrank", 9)); // Output: Yes
+console.log(appendAndDelete("aba", "aba", 7)); // Output: Yes
+
