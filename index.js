@@ -788,4 +788,43 @@ for (const testCase of testCases) {
     console.log(result);
 }
 
+//libraryFine
+function libraryFine(d1, m1, y1, d2, m2, y2) {
+    if (y1 > y2) {
+        return 10000; // Fixed fine for returning after the calendar year
+    } else if (y1 === y2 && m1 > m2) {
+        return 500 * (m1 - m2); // Fine for returning after the expected return month
+    } else if (y1 === y2 && m1 === m2 && d1 > d2) {
+        return 15 * (d1 - d2); // Fine for returning after the expected return day
+    }
+    return 0; // No fine if returned on or before the expected return date
+}
+
+// Example usage
+const returnedDate = [9, 6, 2015];
+const dueDate = [6, 6, 2015];
+
+const fine = libraryFine(...returnedDate, ...dueDate);
+console.log(fine);
+
+//cutTheSticks
+function cutTheSticks(arr) {
+    let result = [];
+    while (arr.length > 0) {
+        result.push(arr.length);
+        const min = Math.min(...arr);
+        arr = arr.filter(stick => stick > min).map(stick => stick - min);
+    }
+    return result;
+}
+
+// Example usage
+const sticks1 = [5, 4, 4, 2, 2, 8];
+const sticks2 = [1, 2, 3, 4, 3, 3, 2, 1];
+
+const result1 = cutTheSticks(sticks1);
+const result2 = cutTheSticks(sticks2);
+
+console.log(result1); // Output: [6, 4, 2, 1]
+console.log(result2); // Output: [8, 6, 4, 1]
 
