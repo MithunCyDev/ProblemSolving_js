@@ -28,3 +28,4 @@
 /circularArrayRotation,
 /permutationEquation,
 /findDigits,
+/appendAndDelete,
