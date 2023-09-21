@@ -27,3 +27,4 @@
 /viralAdvertising,
 /circularArrayRotation,
 /permutationEquation,
+/findDigits,
