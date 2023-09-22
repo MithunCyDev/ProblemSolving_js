@@ -29,3 +29,4 @@
 /permutationEquation,
 /findDigits,
 /appendAndDelete,
+/nonDivisibleSubset,
