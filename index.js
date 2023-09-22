@@ -828,3 +828,33 @@ const result2 = cutTheSticks(sticks2);
 console.log(result1); // Output: [6, 4, 2, 1]
 console.log(result2); // Output: [8, 6, 4, 1]
 
+//nonDivisibleSubset
+function nonDivisibleSubset(S, k) {
+    let count = Array(k).fill(0);
+  
+    for (let i = 0; i < S.length; i++) {
+        count[S[i] % k]++;
+    }
+  
+    let result = Math.min(count[0], 1);
+  
+    for (let i = 1; i <= k / 2; i++) {
+        if (i !== k - i) {
+            result += Math.max(count[i], count[k - i]);
+        }
+    }
+  
+    if (k % 2 === 0) {
+        result++;
+    }
+  
+    return result;
+}
+
+// Example usage:
+const S = [1, 7, 2, 4];
+const k = 3;
+const result = nonDivisibleSubset(S, k);
+console.log(result); // Output: 3
+
+
