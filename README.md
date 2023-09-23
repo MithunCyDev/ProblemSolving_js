@@ -30,3 +30,4 @@
 /findDigits,
 /appendAndDelete,
 /nonDivisibleSubset,
+/repeatedString,
