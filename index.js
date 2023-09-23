@@ -858,3 +858,26 @@ const result = nonDivisibleSubset(S, k);
 console.log(result); // Output: 3
 
 
+//repeatedString
+function repeatedString(s, n) {
+    
+    const count_a_in_original = (s.match(/a/g) || []).length;
+
+    const full_repeats = Math.floor(n / s.length);
+
+    const remaining_chars = n % s.length;
+
+    const count_a_in_remaining = (s.slice(0, remaining_chars).match(/a/g) || []).length;
+
+    const total_a = (count_a_in_original * full_repeats) + count_a_in_remaining;
+
+    return total_a;
+}
+
+// Sample Input 0
+const result_0 = repeatedString("aba", 10);
+console.log(result_0); // Output: 7
+
+// Sample Input 1
+const result_1 = repeatedString("a", 1000000000000);
+console.log(result_1); // Output: 1000000000000
