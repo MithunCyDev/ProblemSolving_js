@@ -881,3 +881,26 @@ console.log(result_0); // Output: 7
 // Sample Input 1
 const result_1 = repeatedString("a", 1000000000000);
 console.log(result_1); // Output: 1000000000000
+
+
+function jumpingOnClouds(c) {
+    let jumps = 0;
+    let i = 0;
+
+    while (i < c.length - 1) {
+        if (i + 2 < c.length && c[i + 2] === 0) {
+            i += 2;
+        } else {
+            i++;
+        }
+        jumps++;
+    }
+
+    return jumps;
+}
+
+// Sample Input 0
+const clouds = [0, 0, 1, 0, 0, 1, 0];
+const result = jumpingOnClouds(clouds);
+console.log(result); // Output: 4
+
