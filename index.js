@@ -904,3 +904,35 @@ const clouds = [0, 0, 1, 0, 0, 1, 0];
 const result = jumpingOnClouds(clouds);
 console.log(result); // Output: 4
 
+
+function equalizeArray(arr) {
+    let frequencyMap = new Map();
+
+    // Count the frequency of each element
+    for (let i = 0; i < arr.length; i++) {
+        if (frequencyMap.has(arr[i])) {
+            frequencyMap.set(arr[i], frequencyMap.get(arr[i]) + 1);
+        } else {
+            frequencyMap.set(arr[i], 1);
+        }
+    }
+
+    // Find the element with maximum frequency
+    let maxFrequency = 0;
+    frequencyMap.forEach(value => {
+        if (value > maxFrequency) {
+            maxFrequency = value;
+        }
+    });
+
+    // Calculate the minimum deletions
+    return arr.length - maxFrequency;
+}
+
+// Sample Input
+let arr = [3, 3, 2, 1, 3];
+let result = equalizeArray(arr);
+
+// Output
+console.log(result); // Output: 2
+
