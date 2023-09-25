@@ -936,3 +936,51 @@ let result = equalizeArray(arr);
 // Output
 console.log(result); // Output: 2
 
+//queensAttack
+function queensAttack(n, k, r_q, c_q, obstacles) {
+    // Define directions: up, down, left, right, up-left, up-right, down-left, down-right
+    const directions = [[-1, 0], [1, 0], [0, -1], [0, 1], [-1, -1], [-1, 1], [1, -1], [1, 1]];
+    let attacks = 0;
+    
+    // Create a set to store obstacle positions for faster lookup
+    const obstaclesSet = new Set(obstacles.map(obstacle => obstacle.join(',')));
+    
+    for (const direction of directions) {
+        let [dr, dc] = direction;
+        let row = r_q + dr;
+        let col = c_q + dc;
+        
+        while (row >= 1 && row <= n && col >= 1 && col <= n) {
+            const position = `${row},${col}`;
+            if (obstaclesSet.has(position)) {
+                break;
+            }
+            attacks++;
+            row += dr;
+            col += dc;
+        }
+    }
+    
+    return attacks;
+}
+
+// Sample Input 0
+const n0 = 4;
+const k0 = 0;
+const r_q0 = 4;
+const c_q0 = 4;
+const obstacles0 = [];
+
+const result0 = queensAttack(n0, k0, r_q0, c_q0, obstacles0);
+console.log(result0); // Output: 9
+
+// Sample Input 1
+const n1 = 5;
+const k1 = 3;
+const r_q1 = 4;
+const c_q1 = 3;
+const obstacles1 = [[5, 5], [4, 2], [2, 3]];
+
+const result1 = queensAttack(n1, k1, r_q1, c_q1, obstacles1);
+console.log(result1); // Output: 10
+
