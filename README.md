@@ -31,3 +31,5 @@
 /appendAndDelete,
 /nonDivisibleSubset,
 /repeatedString,
+/acmTeam,
+/queenAttack,
