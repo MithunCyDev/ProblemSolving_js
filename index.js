@@ -984,3 +984,39 @@ const obstacles1 = [[5, 5], [4, 2], [2, 3]];
 const result1 = queensAttack(n1, k1, r_q1, c_q1, obstacles1);
 console.log(result1); // Output: 10
 
+//acmTeam
+function acmTeam(topic) {
+    let maxTopics = 0;
+    let maxTeams = 0;
+
+    for (let i = 0; i < topic.length; i++) {
+        for (let j = i + 1; j < topic.length; j++) {
+            let knownTopics = 0;
+            for (let k = 0; k < topic[i].length; k++) {
+                if (topic[i][k] === '1' || topic[j][k] === '1') {
+                    knownTopics++;
+                }
+            }
+            if (knownTopics > maxTopics) {
+                maxTopics = knownTopics;
+                maxTeams = 1;
+            } else if (knownTopics === maxTopics) {
+                maxTeams++;
+            }
+        }
+    }
+
+    return [maxTopics, maxTeams];
+}
+
+// Example usage
+const topics = [
+    "10101",
+    "11100",
+    "11010",
+    "00101"
+];
+
+const result = acmTeam(topics);
+console.log(result[0]); // Maximum topics known
+console.log(result[1]); // Number of teams with maximum topics
