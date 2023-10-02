@@ -1021,17 +1021,19 @@ const result = acmTeam(topics);
 console.log(result[0]); // Maximum topics known
 console.log(result[1]); // Number of teams with maximum topics
 
+
 //taumBday
 function taumBday(b, w, bc, wc, z) {
-    // Calculate the cost if we buy all black gifts and all white gifts
-    let costBlack = b * bc;
-    let costWhite = w * wc;
+    // Write your code here
+    const gifts = BigInt(b) + BigInt(w);
 
-    // Calculate the cost if we convert black to white or vice versa
-    let costConvertBlack = (b + w) * bc + w * z;
-    let costConvertWhite = (b + w) * wc + b * z;
+    const whiteGifts = gifts * BigInt(wc) + (BigInt(b) * BigInt(z));
+    const blackGifts = gifts * BigInt(bc) + (BigInt(w) * BigInt(z));
 
-    // Find the minimum cost among the above two scenarios
-    return Math.min(costBlack + costWhite, costConvertBlack, costConvertWhite);
+    let min = BigInt(b) * BigInt(bc) + BigInt(w) * BigInt(wc);
+
+    (blackGifts < min) && (min = blackGifts);
+    (whiteGifts < min) && (min = whiteGifts);
+
+    return min;
 }
-
