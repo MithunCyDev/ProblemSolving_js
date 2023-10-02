@@ -34,3 +34,4 @@
 /acmTeam,
 /queenAttack,
 /taumBday,
+/acmTeam,
