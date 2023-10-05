@@ -1037,3 +1037,19 @@ function taumBday(b, w, bc, wc, z) {
 
     return min;
 }
+
+//encryption
+function encryption(s) {
+    let value = Math.ceil(Math.sqrt([...s].length));
+  
+    return [...s].reduce((target, item, index) => {
+        target[index % value] += item;
+  
+        return target;
+      }, 
+      new Array(value).fill("")).join(" ");
+  }
+
+
+  const result = encryption("Hello")
+  console.log(result)
