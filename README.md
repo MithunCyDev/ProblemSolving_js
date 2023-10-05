@@ -35,3 +35,4 @@
 /queenAttack,
 /taumBday,
 /acmTeam,
+/encryption,
