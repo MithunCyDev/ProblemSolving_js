@@ -1088,3 +1088,47 @@ function biggerIsGreater(w) {
 
     return w.join('');
 }
+
+
+function biggerIsGreater(w) {
+    // Convert the input string into an array for easier manipulation
+    let arr = w.split('');
+
+    // Find the first character from the right that is smaller than the character on its right
+    let i = arr.length - 2;
+    while (i >= 0 && arr[i] >= arr[i + 1]) {
+        i--;
+    }
+
+    // If no such character exists, it's not possible to rearrange the string
+    if (i === -1) {
+        return 'no answer';
+    }
+
+    // Find the smallest character to the right of i that is greater than arr[i]
+    let j = arr.length - 1;
+    while (arr[j] <= arr[i]) {
+        j--;
+    }
+
+    // Swap arr[i] and arr[j]
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+
+    // Reverse the substring to the right of i
+    let left = i + 1;
+    let right = arr.length - 1;
+    while (left < right) {
+        [arr[left], arr[right]] = [arr[right], arr[left]];
+        left++;
+        right--;
+    }
+
+    return arr.join('');
+}
+
+// Test cases
+console.log(biggerIsGreater('ab'));    // Output: 'ba'
+console.log(biggerIsGreater('bb'));    // Output: 'no answer'
+console.log(biggerIsGreater('hefg'));  // Output: 'hegf'
+console.log(biggerIsGreater('dhck'));  // Output: 'dhkc'
+console.log(biggerIsGreater('dkhc'));  // Output: 'hcdk'
