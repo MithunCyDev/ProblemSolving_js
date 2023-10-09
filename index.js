@@ -1132,3 +1132,30 @@ console.log(biggerIsGreater('bb'));    // Output: 'no answer'
 console.log(biggerIsGreater('hefg'));  // Output: 'hegf'
 console.log(biggerIsGreater('dhck'));  // Output: 'dhkc'
 console.log(biggerIsGreater('dkhc'));  // Output: 'hcdk'
+
+//kaprekarNumbers
+function kaprekarNumbers(p, q) {
+    let kaprekarNumbers = [];
+
+    for (let i = p; i <= q; i++) {
+        let square = i * i;
+        let strSquare = square.toString();
+
+        let left = parseInt(strSquare.slice(0, Math.floor(strSquare.length / 2))) || 0;
+        let right = parseInt(strSquare.slice(Math.floor(strSquare.length / 2))) || 0;
+
+        if (left + right === i) {
+            kaprekarNumbers.push(i);
+        }
+    }
+
+    if (kaprekarNumbers.length > 0) {
+        console.log(kaprekarNumbers.join(' '));
+    } else {
+        console.log("INVALID RANGE");
+    }
+}
+
+// Test cases
+kaprekarNumbers(1, 100);
+
