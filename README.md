@@ -36,3 +36,4 @@
 /taumBday,
 /acmTeam,
 /encryption,
+/kaprekarNumbers,
