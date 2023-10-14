@@ -1159,3 +1159,42 @@ function kaprekarNumbers(p, q) {
 // Test cases
 kaprekarNumbers(1, 100);
 
+
+
+//beautifulTriplets
+function beautifulTriplets(d, arr) {
+  let count = 0;
+  const n = arr.length;
+
+  for (let i = 0; i < n; i++) {
+    for (let j = i + 1; j < n; j++) {
+      for (let k = j + 1; k < n; k++) {
+        if (arr[j] - arr[i] === d && arr[k] - arr[j] === d) {
+          count++;
+        }
+      }
+    }
+  }
+
+  return count;
+}
+
+//beautifulTriplets optimize
+function beautifulTriplets(d, arr) {
+  let count = 0;
+  const n = arr.length;
+
+  for (let i = 0; i < n - 2; i++) {
+    for (let j = i + 1; j < n - 1; j++) {
+      if (arr[j] - arr[i] === d) {
+        for (let k = j + 1; k < n; k++) {
+          if (arr[k] - arr[j] === d) {
+            count++;
+          }
+        }
+      }
+    }
+  }
+
+  return count;
+}
