@@ -37,3 +37,4 @@
 /acmTeam,
 /encryption,
 /kaprekarNumbers,
+/minimumDistances,
