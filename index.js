@@ -1198,3 +1198,25 @@ function beautifulTriplets(d, arr) {
 
   return count;
 }
+
+
+  function minimumDistances(arr) {
+  let minDistance = Infinity;
+  const indices = {};
+
+  for (let i = 0; i < arr.length; i++) {
+      const num = arr[i];
+      if (indices[num] !== undefined) {
+          const distance = i - indices[num];
+          minDistance = Math.min(minDistance, distance);
+      }
+      indices[num] = i;
+  }
+
+  return minDistance !== Infinity ? minDistance : -1;
+}
+
+// Example usage
+const arr = [7, 1, 3, 4, 1, 7];
+const result = minimumDistances(arr);
+console.log(result); // Output: 3
