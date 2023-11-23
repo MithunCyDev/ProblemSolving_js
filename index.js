@@ -1219,4 +1219,21 @@ function beautifulTriplets(d, arr) {
 // Example usage
 const arr = [7, 1, 3, 4, 1, 7];
 const result = minimumDistances(arr);
-console.log(result); // Output: 3
+console.log(result);
+
+//howManyGames
+function howManyGames(p, d, m, s) {
+  let gamesBought = 0;
+
+  while (s >= p) {
+      s -= p; // Deduct the cost of the current game
+      gamesBought++;
+
+      // Update the price for the next game
+      p = Math.max(p - d, m);
+  }
+
+  return gamesBought;
+}
+
+console.log(howManyGames(20, 3, 6, 80)); 
