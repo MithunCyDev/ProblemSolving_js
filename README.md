@@ -38,3 +38,4 @@
 /encryption,
 /kaprekarNumbers,
 /minimumDistances,
+/howManyGames,
