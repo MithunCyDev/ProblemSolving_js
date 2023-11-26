@@ -39,3 +39,4 @@
 /kaprekarNumbers,
 /minimumDistances,
 /howManyGames,
+/timeInWords,
